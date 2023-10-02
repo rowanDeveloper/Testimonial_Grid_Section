@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white:  hsl(0, 0%, 100%);
+
+    /* Neutral */
+    --light-gray: hsl(0, 0%, 81%);                 /* This is the color of the person's name */  
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    /* Typography */
+    --main-font-family: "Barlow Semi Condensed", sans-serif;
+    --font-size: 13px;  
+}
+
+html {
+    font-size: 62.5%;                                /* Font size of 10px*/
+}
+
+body {
+    font-family: var(--main-font-family);
+    font-size: 1.3rem;                              /* So this would be 13px */
+
+    background-color: var(--light-grayish-blue);
+    color: var(--white);                            /* Mostly the font-colors are white */
+}
+
+
+.container {
+    margin: 2rem;
+   
+    display: grid;
+    gap: 2rem;
+}
+
+.box {
+    border-radius: 1rem;
+    padding: 3.64rem;
+}   
+
+.card__heading {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
+}   
+
+.icon-image {
+    display: inline;                             /* This doesn't seem to work */
+    border-radius: 100%;
+    border: 2px solid #fff;
+}
+
+.card__titles { 
+    padding-left: 2rem; 
+}
+
+/* Person's name */
+.name__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--light-gray);
+}
+
+.name__verified {
+    font-size: 1.2rem;
+    color: var(--light-gray);
+    opacity: 0.5;
+}
+
+.testimonial__1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.testimonial__2 {
+    color: var(--light-gray);
+    opacity: 0.7;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Mobile First -- rows */
+.box1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: var(--moderate-violet);   
+    background-image: url('./images/bg-pattern-quotation.svg') no repeat;    
+    background-position: top right;
+}
+
+.box2 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.box3 {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    color: var(--very-dark-blackish-blue);
+    background-color: var(--white);    
+}
+
+.box3 .name__title,
+.box3  .name__verified,
+.box3 .testimonial__1,
+.box3 .testimonial__2 {
+    color: var(--very-dark-grayish-blue);
+}
+
+.box4 {
+    grid-row-start: 5;
+    grid-row-end: 7;
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.box5 {
+    grid-row-start: 7;
+    grid-row-end: 9;
+    color: var(--very-dark-blackish-blue);
+    background-color: var(--white);
+}
+
+.box5 .name__title,
+.box5  .name__verified,
+.box5 .testimonial__1,
+.box5 .testimonial__2 {
+    color: var(--very-dark-grayish-blue);
+}
+
+
+@media(min-width: 600px) {
+    .container {
+        margin: 5rem;
+
+        display: grid;
+        gap: 2rem;
+    }
+    
+    .box1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    .box2 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    .box3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    
+    .box4 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    
+    .box5 {
+        grid-column-start: 4;
+        grid-column-end: 5;
+
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+}
+
+
